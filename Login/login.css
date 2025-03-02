@@ -1,0 +1,72 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+.container {
+    display: flex;
+    height: 100vh;
+}
+.left-side {
+    width: 66.66%;
+    background: url('/jpg/university-of-phayao-scholarship-01.jpg') no-repeat center center/cover;
+}
+.right-side {
+    width: 33.33%;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+}
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: purple;
+}
+.subtitle {
+    margin-top: 10px;
+    color: gray;
+}
+.form-container {
+    width: 100%;
+}
+.form-container input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: #f9f9f9;
+}
+.remember-me {
+    display: flex;
+    align-items: center;
+    
+}
+.remember-me label {
+    
+    color: gray;
+}
+button {
+    width: 100%;
+    padding: 10px;
+    background: blue;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+button:hover {
+    background: darkblue;
+}
+.switch-form {
+    margin-top: 10px;
+    text-align: center;
+}
+.switch-form a {
+    color: blue;
+    cursor: pointer;
+}

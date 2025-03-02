@@ -1,0 +1,123 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    background-color: #f4e9e9;
+    height: 100vh;
+    overflow: hidden;
+}
+
+
+
+
+
+.navbar {
+    background-color: #9b7baa;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.navbar .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: black;
+    padding-left: 15px;
+}
+.navbar input {
+    flex: 1;
+    max-width: 500px;
+    padding: 8px;
+    border-radius: 20px;
+    border: none;
+}
+.navbar .icons {
+    display: flex;
+    gap: 15px;
+    padding-right: 15px;
+}
+
+.navbar .icons a{
+    text-decoration: none;
+}
+
+
+
+.container {
+    display: flex;
+}
+.sidebar {
+    width: 250px;
+    background: white;
+    padding: 20px;
+    min-height: 100vh;
+}
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+.sidebar ul li {
+    padding: 40px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    transition: 0.3;
+}
+
+.sidebar ul li:hover {
+    background: #e0d0f0;
+    border-radius: 5px;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: black;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+
+
+.main-content {
+    flex: 1;
+    margin: 10px;
+    height: 100vh;
+    overflow-y: auto;
+}
+
+.post-work {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    grid-column: auto;
+    padding: 10px;
+}
+
+.job-card {
+    background: url('/jpg/จดโน้ตให้สวย-6.jpg') no-repeat center center/cover;
+    background-size: 50%;
+    border-radius: 10px;
+    padding: 30px;
+    position: relative;
+    display: grid;
+    place-items: center;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    height: 100vh;
+    margin-bottom: 20px;
+}
+
+.job-info {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: #f4dc70;
+    padding: 10px;
+    color: black;
+    border-radius: 0 0 8px 8px;
+}

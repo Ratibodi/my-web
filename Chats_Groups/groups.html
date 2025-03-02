@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chats</title>
+    <link rel="stylesheet" href="groups.css">
+</head>
+<body>
+    
+    <div class="navbar">
+        <div class="logo">LOGO</div>
+        <input type="text" placeholder="ค้นหา">
+        <div class="icons"><a href="/Profile/profile.html"> 👤</a></div>
+    </div>
+
+    <div class="container">
+
+
+        
+        <div class="sidebar">
+            <ul>
+                <li>🏠 <a href="/Main/main.html">หน้าเเรก</a></li>
+                <li>⭐ <a href="/Popular/Popular.html">ยอดนิยม</a></li>
+                <li>👥 <a href="/Chats_Groups/groups.html"> กลุ่ม</a></li>
+                <li>💬 <a href="/Chats_Groups/chats.html">แชท</a></li>
+                <li>➕ <a href="/Create a job/Create.html">สร้าง</a></li>
+                <li>☰ <a href="http://"> เพิ่มเติม</a></li>
+            </ul>
+        </div>
+
+
+
+    
+
+
+        <div class="chats">
+            <div class="chat-list" id="chatList">
+                <div class="chat-item">
+                    <img src="/jpg/oIDE0LI9EGf7gO2Ert0DfDQbfdJFAAlAA7uLIu~tplv-tej9nj120t-origin.webp" alt="Avatar">
+                    <span>Teennakub</span>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <div class="main-content">
+            <div class="chat-window">
+                <div class="messages" id="messages"></div>
+                <div class="chat-input">
+                    <input type="text" id="messageInput" placeholder="พิมพ์ข้อความ...">
+                    <button onclick="sendMessage()">ส่ง</button>
+                </div>
+            </div>
+        </div>
+            
+    </div>
+    
+    <script>
+        function sendMessage() {
+            const input = document.getElementById('messageInput');
+            const messages = document.getElementById('messages');
+            if (input.value.trim() !== '') {
+                const messageDiv = document.createElement('div');
+                messageDiv.classList.add('message', 'user');
+                messageDiv.textContent = input.value;
+                messages.appendChild(messageDiv);
+                input.value = '';
+                messages.scrollTop = messages.scrollHeight;
+            }
+        }
+
+        function addFriend() {
+            const friendNameInput = document.getElementById('friendName');
+            const chatList = document.getElementById('chatList');
+            if (friendNameInput.value.trim() !== '') {
+                const chatItem = document.createElement('div');
+                chatItem.classList.add('chat-item');
+                chatItem.innerHTML = `<img src='default.jpg' alt='Avatar'> <span>${friendNameInput.value}</span>`;
+                chatList.appendChild(chatItem);
+                friendNameInput.value = '';
+            }
+        }
+    </script>
+    
+</body>
+</html>

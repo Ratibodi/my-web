@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup & Login Page</title>
+    <link rel="stylesheet" href="login.css">
+
+    <script>
+        function toggleForm() {
+            const signupForm = document.getElementById('signup-form');
+            const loginForm = document.getElementById('login-form');
+            if (signupForm.style.display === 'none') {
+                signupForm.style.display = 'block';
+                loginForm.style.display = 'none';
+            } else {
+                signupForm.style.display = 'none';
+                loginForm.style.display = 'block';
+            }
+        }
+
+        function handleSignup(event) {
+            event.preventDefault();
+            const email = document.querySelector('#signup-form input[type=email]').value;
+            const password = document.querySelector('#signup-form input[type=password]').value;
+            localStorage.setItem(email, password);
+            alert('Signup successful! You can now log in.');
+            toggleForm();
+        }
+
+        function handleLogin(event) {
+            event.preventDefault();
+            const email = document.querySelector('#login-form input[type=email]').value;
+            const password = document.querySelector('#login-form input[type=password]').value;
+            const storedPassword = localStorage.getItem(email);
+            if (storedPassword && storedPassword === password) {
+                alert('Login successful! Welcome.');
+                window.location.href = '/Main/main.html';
+                
+            }
+            
+            else{
+                alert('Invalid email or password. Please try again.');
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="left-side"></div>
+        <div class="right-side">
+            <h1 class="logo">LOGO Web something</h1>
+            <p class="subtitle">let started</p>
+
+            <div class="form-container">
+                <!-- Signup Form -->
+                <form id="signup-form" onsubmit="handleSignup(event)">
+                    <input type="email" placeholder="Email Address" required>
+                    <input type="password" placeholder="Password" required>
+                    <input type="password" placeholder="Confirm Password" required>
+                    <div class="remember-me">
+                        <input type="checkbox" id="remember-signup">
+                        <label for="remember-signup">Remember me</label>
+                    </div>
+                    <button type="submit">Sign up</button>
+                </form>
+
+                <!-- Login Form -->
+                <form id="login-form" style="display: none;" onsubmit="handleLogin(event)">
+                    <input type="email" placeholder="Email Address" required>
+                    <input type="password" placeholder="Password" required>
+                    <div class="remember-me">
+                        <input type="checkbox" id="remember-login">
+                        <label for="remember-login">Remember me</label>
+                    </div>
+                    <button type="submit">Login</button>
+                </form>
+
+                <div class="switch-form">
+                    <p>
+                        <span id="toggle-text">Already have an account?</span> 
+                        <a onclick="toggleForm()">Login</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

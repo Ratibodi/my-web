@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="Create.css">
+</head>
+<body>
+    <script>
+        function handleSubmit(event) {
+            event.preventDefault(); 
+            let title = document.getElementById("title").value;
+            let description = document.getElementById("description").value;
+            if (title.trim() === "" || description.trim() === "") {
+                alert("กรุณากรอกข้อมูลให้ครบถ้วน");
+                return;
+            }
+            alert("สร้างงานสำเร็จ!");
+        }
+    </script>
+    
+     
+    <div class="navbar">
+        <div class="logo">LOGO</div>
+        <input type="text" placeholder="ค้นหา">
+        <div class="icons"><a href="/Profile/profile.html"> 👤</a></div>
+    </div>
+
+    <div class="container">
+
+
+        
+        <div class="sidebar">
+            <ul>
+                <li>🏠 <a href="/Main/main.html">หน้าเเรก</a></li>
+                <li>⭐ <a href="/Popular/Popular.html">ยอดนิยม</a></li>
+                <li>👥 <a href="/Chats_Groups/groups.html"> กลุ่ม</a></li>
+                <li>💬 <a href="/Chats_Groups/chats.html">แชท</a></li>
+                <li>➕ <a href="/Create a job/Create.html">สร้าง</a></li>
+                <li>☰ <a href="http://"> เพิ่มเติม</a></li>
+            </ul>
+        </div>
+
+        <div class="main-conten">
+            <section class="create-form">
+            <h2>สร้างงานใหม่</h2>
+                <form>
+                    <label for="title">ชื่อเรื่อง</label>
+                    <input type="text" id="title" name="title" required>
+                    <label for="description">คำอธิบาย</label>
+                    <textarea id="description" name="description" rows="4" required></textarea>
+                    <label for="file">อัปโหลดไฟล์</label>
+                    <input type="file" id="file" name="file">
+                    <button type="submit">สร้างงาน</button>
+                </form>
+            </section>
+        </div>
+
+        
+
+
+
+
+
+    </div>
+
+
+
+</body>
+</html>
